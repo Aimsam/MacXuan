@@ -1,0 +1,11 @@
+body {
+    padding-top: 20px;
+    background:#f9f9f9;
+    -webkit-user-select: none;  /*webkit浏览器*/
+}
+a:link {
+    cursor: default;
+}
+a:link {
+    text-decoration: none;
+}

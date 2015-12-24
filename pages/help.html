@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>使用帮助</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h2>使用帮助</h2>
+            <small id="version"></small>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    设置
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                首次启动必须要设置下载路径才能开始使用
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    添加任务
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                    <p>从首页进入支持的网盘，登录网盘帐号，勾选需要下载的文件，导入到『麦旋风下载』即可</p>
+                                    <p>从下载管理处点击 『+』号添加连接或者种子下载任务。</p>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    下载管理
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                点击选中下载任务可以通过顶部的按钮暂停、继续或者删除任务，下载完成的任务可以右键在 Finder 中查看
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/libs/bootstrap.min.js"></script>
+    <script>
+        var dirname = process.cwd();
+        var path = require('path');
+        var packageFile = require(path.resolve(dirname, 'package.json'));
+        $('#version').text('v' + packageFile.version);
+    </script>
+</body>
+</html>

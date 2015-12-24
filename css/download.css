@@ -1,0 +1,90 @@
+body {
+    background:#f9f9f9;
+    cursor: default;
+}
+a:link {
+    cursor: default;
+}
+div {
+    -webkit-user-select: none;  /*webkit浏览器*/
+}
+#left {
+    position: fixed;
+    height: 100%;
+    width: 150px;
+    background-color: #32373F;
+}
+#left a, #left a:hover, #left a:active {
+    color: #989BA7;
+    background-color: #32373F;
+}
+#left li.active a {
+    color: #FFFFFF;
+    background-color: #2B9BFC;
+}
+#right {
+    padding-left: 0;
+}
+.top-buttons {
+    position: fixed;
+    background-color: #f9f9f9;
+    font-size: 1.5em;
+    border-bottom: 1px solid #dddddd;
+}
+.top-buttons .glyphicon {
+    padding:10px;
+}
+.top-buttons .glyphicon-option-vertical {
+    color: #8B8B8B;
+}
+.top-buttons a {
+    color: #646464;
+    text-decoration: none;
+}
+#task-table td {
+    border-top:none;
+    border-bottom: 1px solid #dddddd;
+}
+#task-table>tbody>tr.active>td {
+    background-color: #d1e6ff;
+}
+.task-title, .task-size, .task-remain, .task-precent {
+    display: block;
+}
+.task-remain, .task-precent {
+    float: left;
+    width: 50%
+}
+.task-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+.task-size {
+    color: #bbb;
+}
+.task-progress .progress {
+    height:8px;
+    padding:0;
+}
+#downloadList {
+    padding-top: 44px;
+}
+#downloadModal .close {
+    float: left;
+    padding: 0 4px;
+}
+#downloadModal .modal-header {
+    padding: 0;
+    border: none;
+}
+#downloadModal .modal-footer {
+    padding: 10px;
+}
+#downloadModal .modal-footer .btn-sm {
+    padding: 4px 6px;
+}
+#downloadModal .modal-body textarea {
+    border: none;
+    resize: none;
+}

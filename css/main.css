@@ -1,0 +1,85 @@
+html, body {
+    height: 100%;
+    -webkit-user-select: none; /*webkit浏览器*/
+    cursor: default;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+}
+
+body > a {
+    display: none;
+}
+
+.thumbnail:hover {
+    border-color: #bbbbbb;
+    background-color: #eeeeee;
+}
+
+#main-nav {
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    background-color: #32373F;
+}
+
+#main-nav .nav li {
+    display: inline-block;
+    float: none
+}
+
+#main-nav .nav li a {
+    color: #989BA7;
+    cursor: default;
+}
+
+#main-nav .nav li a:hover {
+    color: #989BA7;
+    background: #32373F;
+}
+
+#main-nav .nav li.active a {
+    color: #FFFFFF;
+    background-color: #2B9BFC;
+}
+
+#main-frame {
+    position: fixed;
+    top: 0;
+    padding-top: 41px;
+    width: 100%;
+    height: 100%;
+}
+
+#settingModal .close {
+    float: left;
+    padding: 0 4px;
+}
+
+#settingModal .modal-header {
+    padding: 0;
+    border: none;
+}
+
+#settingModal .modal-footer {
+    padding: 10px;
+}
+
+#settingModal .modal-footer .btn-sm {
+    padding: 4px 6px;
+}
+
+#settingModal .modal-body textarea {
+    border: none;
+    resize: none;
+}
+
+.bootstrap-filestyle .group-span-filestyle label, .bootstrap-filestyle .group-span-filestyle label:hover, .bootstrap-filestyle .group-span-filestyle label:active {
+    background-color: transparent;
+    border-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app="lifestealer">
+<head>
+    <meta charset="utf-8">
+    <title>麦旋风</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+  <div class="container" id="main-nav">
+      <div class="row">
+          <div class="col-xs-12">
+              <ul class="nav nav-pills text-left">
+                <li role="presentation" class="active"><a href="pages/home.html" target="main-frame"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+                <li role="presentation"><a href="pages/download.html" target="main-frame"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></li>
+                <li role="presentation"><a href="###" id="back-button"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a></li>
+                <li role="presentation"><a href="javascript:document.getElementById('main-frame').contentWindow.location.reload();"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a></li>
+                <li role="presentation"><a href="javascript:void(0);" data-toggle="modal" data-target="#settingModal"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></li>
+                <li role="presentation"><a href="pages/help.html" target="main-frame"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></li>
+                <li role="presentation"><a href="javascript:void(0);" id="dev-button"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a></li>
+              </ul>
+          </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="settingModal" tabindex="-1" role="dialog" aria-labelledby="settingModal" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-body">
+                        <form oninput="taskNumber.value=parseInt(taskNumberRange.value)">
+                            <div class="row">
+                                <div class="col-xs-8">
+                                  <div class="row">
+                                      <div class="col-xs-12">
+                                        <label for="defaultDownloadPath">下载路径</label>
+                                      </div>
+                                      <div class="col-xs-10" style="padding-right: 0;">
+                                        <input type="text" class="form-control" id="currentDownloadPath" disabled>
+                                      </div>
+                                      <div class="col-xs-2" style="padding-left: 0;">
+                                        <input type="file" class="form-control" id="defaultDownloadPath" nwdirectory />
+                                      </div>
+                                      </p>
+                                  </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <label for="task-number" id="taskNumberText">同时运行最大任务数</label>
+                                    <output for="task-number" name="taskNumber" class="text-center" id="taskNumber">1</output>
+                                    <input type="range" max="15" min="1" step="1" id="taskNumberRange">
+                                </div>
+                            </div>
+                        </form>
+                  </div>
+                  <div class="modal-footer">
+                      <a class="btn btn-primary btn-sm" id="btn-save" id="addTask">保存</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModal" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-body" id="updateMessage">
+                  </div>
+                  <div class="modal-footer">
+                      <a class="btn btn-primary btn-sm" id="btn-update" href="#" onclick="">确认</a>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+  <!--<iframe src="pages/home.html" id="main-frame" name="main-frame" frameborder="0" scrolling="auto" nwfaketop></iframe>-->
+  <div ng-view></div>
+
+  <script type="text/javascript" src="js/libs/angular.min.js"></script>
+  <script type="text/javascript" src="js/libs/angular-route.min.js"></script>
+  <script type="text/javascript" src="js/libs/jquery.min.js"></script>
+  <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/libs/bootstrap-filestyle.min.js"></script>
+  <script type="text/javascript" src="js/init.js"></script>
+  <script type="text/javascript" src="js/ctrls/main.js"></script>
+  <script type="text/javascript">
+    var maxDownloadNumber = localStorage.getItem("maxDownloadNumber") ? localStorage.getItem("maxDownloadNumber") : 3;
+    var defaultDownloadPath = localStorage.getItem('defaultDownloadPath') ? localStorage.getItem('defaultDownloadPath') : '~/Downloads';
+    $('#currentDownloadPath').val(defaultDownloadPath);
+    $('#taskNumber').text(maxDownloadNumber);
+    $('#taskNumberRange').val(maxDownloadNumber);
+    $(":file").filestyle({input: false, buttonText: '', badge: false});
+    $('#defaultDownloadPath').on('change', function () {
+      $('#currentDownloadPath').val($(this).val());
+    });
+  </script>
+  <script src="http://s4.cnzz.com/z_stat.php?id=1254247521&web_id=1254247521" language="JavaScript"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!--
+<div id="left">
+    <ul class="nav">
+        <li class="{{ listType == 1 ? 'active' : '' }}">
+            <a href="javascript:void(0);" ng-click="activeList()"><span class="glyphicon glyphicon-arrow-down"></span> 正在下载</a>
+        </li>
+        <li class="{{ listType == 2 ? 'active' : '' }}">
+            <a href="javascript:void(0);" ng-click="completeList()"><span class="glyphicon glyphicon-ok"  ></span> 已完成</a>
+        </li>
+        <li>
+            <a href="#/trash" ><span class="glyphicon glyphicon-trash"></span> 废纸篓</a>
+        </li>
+        <li class="{{ listType == 3 ? 'active' : '' }}">
+            <a href="javascript:void(0);" ng-click="allList()"><span class="glyphicon glyphicon-warning-sign"></span> 全部任务</a>
+        </li>
+    </ul>
+</div>
+-->
+<div id="right">
+    <div class="col-xs-12 top-buttons" id="downloadControl">
+        <a href="javascript:void(0);" data-toggle="modal" data-target="#downloadModal" class="glyphicon glyphicon-plus"></a>
+        <span class="glyphicon glyphicon-option-vertical"></span>
+        <a href="javascript:void(0);" ng-click="batchStart()" class="glyphicon glyphicon-play"></a>
+        <a href="javascript:void(0);" ng-click="batchPause()" class="glyphicon glyphicon-pause"></a>
+        <a href="javascript:void(0);" ng-click="batchRemove()" class="glyphicon glyphicon-remove"></a>
+    </div>
+    <div id="downloadList">
+        <table class="table" id="task-table">
+            <tbody>
+            <tr ng-repeat="task in tasks" ng-right-click="showMenu($event, {{ $index }})" ng-click="highLight($index)" class="{{ task.selected ? 'active' : '' }}">
+                <td class="task-info" width="60%">
+                    <span class="task-title">{{ task.title }}</span>
+                    <span class="task-size">{{ task.length }}</span>
+                </td>
+                <td class="task-progress" width="25%">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{ task.completePercent }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ task.completePercent }}%;">
+                            <span class="sr-only">{{ task.completePercent }}% Complete</span>
+                        </div>
+                    </div>
+                    <span class="task-remain text-left">{{ task.status == 'active' ? (isFinite(task.remainTime) ? '' : task.remainTime) : '&nbsp;' }}</span>
+                    <span class="task-precent text-right">{{ task.completePercent }}</span>
+                </td>
+                <td class="task-action" ng-if="task.status == 'active'" width="15%">
+                    {{ task.downloadSpeed }}
+                </td>
+                <td class="task-action" ng-if="task.status == 'complete'" width="15%">
+                    完成
+                </td>
+                <td class="task-action" ng-if="task.status == 'paused'" width="15%">
+                    暂停
+                </td>
+                <td class="task-action" ng-if="task.status == 'error'" width="15%">
+                    失败
+                </td>
+                <td class="task-action" ng-if="task.status == 'removed'" width="15%">
+                    删除
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span
+                        aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body">
+                <textarea id="urls" placeholder="请输入链接地址，多个URL请回车换行" cols="76" rows="5"></textarea>
+                <!--<a class="btn btn-success" href="javascript:void(0);">torrent<input type="file"></a>-->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">继续</button>
+                <a class="btn btn-primary btn-sm" id="addTask">立即下载</a>
+            </div>
+        </div>
+    </div>
+</div>
