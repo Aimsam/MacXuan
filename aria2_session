@@ -1,0 +1,20 @@
+http://www.badadsfasdfas.com	
+ gid=06e51727be516b93
+ dir=/Users/aimsam/Downloads/aria2
+ continue=true
+ rpc-save-upload-metadata=true
+http://d.pcs.baidu.com/file/ea20ed8869289cdf9b9b674b40eec858?fid=2651271691-250528-845912437436312&time=1423037864&rt=pr&sign=FDTAERVC-DCb740ccc5511e5e8fedcff06b081203-50yI0FbFb8%2FHSH8GW1glHW6coyM%3D&expires=8h&prisign=OPlXeyLLE60gMv0/AZBsU5SN5rJwOqzRhL6Now25HScufo4OuxITn8BmzguRNe+KMcO2lqE6kOuT5YgRYf1gmNTLPbHjoqk/f0H38CPCtgWsNJpiwAUUDZedW/6EvPiJ6qGnQA5sHMr99Ymog87UWRBM5hMcxu1SuWJN6Gimh1KC4M4fqqJ6WpTZwPqXzCmA8nICOQOFvybuVyv5W8eNG5KsXi6Q7cpTsBeGicpZsjx4O5SNjqg+2B6HUIdhVffK&chkv=1&chkbd=1&chkpc=&r=371413660	
+ gid=51e8b4e8cd0c40b6
+ dir=/Users/aimsam/Downloads/aria2
+ out=飞鸟娱乐[bbs.hdbird.com].波斯王子：时之刃.720P.国英双语.mkv
+ continue=true
+ rpc-save-upload-metadata=true
+ header=User-Agent: netdisk;4.4.0.6;PC;PC-Windows;6.2.9200;WindowsBaiduYunGuanJia
+ header=Cookie: BDUSS=NhU2JhLVoxZGU2RktQY0VaYXhZcHFWUHRXTEdNRm0tNDRBeG1BOGFmQ0lJZmxVQVFBQUFBJCQAAAAAAAAAAAEAAAB8ntQDw7vDu7K71qq1wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiU0VSIlNFUa0;pcsett=1423124258-d538ca2cac035b89860a134d251aea7a
+ header=Referer: http://pan.baidu.com/disk/home
+http://releases.ubuntu.com/14.04.1/ubuntu-14.04.1-server-amd64.iso	
+ gid=95d58c8a8d16c92f
+ dir=/Users/aimsam/Downloads/aria2
+ continue=true
+ rpc-save-upload-metadata=true
+ pause=true
